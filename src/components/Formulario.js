@@ -4,7 +4,7 @@ import shortid from 'shortid';
 
 const Formulario = (props) => {
 
-  const { guardarGasto } = props;
+  const { guardarGasto, guardarCrearGasto } = props;
   // state
   const [nombreGasto, guardarNombreGasto] = useState('');
   const [cantidadGasto, guardarCantidadGasto]= useState(0);
@@ -29,6 +29,7 @@ const Formulario = (props) => {
 
     // pasar el gasto al componente principal
     guardarGasto(gasto);
+    guardarCrearGasto(true);
     // Eliminar alerta
     guardarError(false);
     // resetear el form
