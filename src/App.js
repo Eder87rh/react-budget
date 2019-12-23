@@ -19,11 +19,15 @@ function App() {
       const listadoGastos = [...gastos, gasto];
       guardarGastos(listadoGastos);
 
+      // restar el presupuesto
+      const presupuestoRestante = restante - gasto.cantidadGasto;
+      guardarRestante(presupuestoRestante);
+
       // una vez que se agrega lo ponemos como false
       guardarCrearGasto(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [creargasto])
+  }, [creargasto, gastos, gasto, restante])
 
   return (
     <div className="App container">
